@@ -1,0 +1,120 @@
+﻿<Window x:Class="Szavazas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szavazas"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.RowSpan="3">
+            <Label Content="Név:" />
+            <TextBox Name="tbxNev" />
+
+            <Label Content="E-Mail cím:" />
+            <TextBox Name="tbxEmail" />
+
+            <Label Content="Telefonszám:" />
+            <TextBox Name="tbxTelefon" />
+
+            <Button Name="btnSzavazok"
+                    Content="Szavazok"
+                    Width="100"
+                    Margin="5"
+                    Click="btnSzavazok_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                    Background="WhiteSmoke">
+            <Label Content="Helyszínek"
+                   FontSize="15"
+                   FontWeight="Bold" />
+
+            <RadioButton Content="Sopron"
+                         Margin="10,0,0,0"
+                         GroupName="HelyszínCsoport"
+                         Checked="RadioButtonHelyszin_Checked"
+                         IsChecked="True"
+                         />
+            <RadioButton Content="Szeged"
+                         Margin="10,0,0,0"
+                         GroupName="HelyszínCsoport"
+                         Checked="RadioButtonHelyszin_Checked"
+                         />
+            <RadioButton Content="Keszthely"
+                         Margin="10,0,0,0"
+                         GroupName="HelyszínCsoport" 
+                         Checked="RadioButtonHelyszin_Checked"
+                         />
+            <RadioButton Content="Békéscsaba"
+                         Margin="10,0,0,0"
+                         GroupName="HelyszínCsoport" 
+                         Checked="RadioButtonHelyszin_Checked"
+                         />
+            <RadioButton Content="Nyíregyháza"
+                         Margin="10,0,0,0"
+                         GroupName="HelyszínCsoport" 
+                         Checked="RadioButtonHelyszin_Checked"
+                         />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1">
+            <Label Content="Utazás módja"
+                   FontSize="15"
+                   FontWeight="Bold" />
+
+            <RadioButton Content="Vonattal"
+                         Margin="10,0,0,0"
+                         GroupName="UtazasCsoport"
+                         Checked="RadioButtonUtazas_Checked"
+                         IsChecked="True"
+                         />
+            <RadioButton Content="Bérelt Busszal"
+                         Margin="10,0,0,0"
+                         GroupName="UtazasCsoport" />
+            <RadioButton Content="Menetrend szerinti busszal"
+                         Margin="10,0,0,0"
+                         GroupName="UtazasCsoport" />
+            <RadioButton Content="Saját Autóval"
+                         Margin="10,0,0,0"
+                         GroupName="UtazasCsoport" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="2"
+                    Background="Beige">
+            <Label Content="Programok"
+                   FontSize="15"
+                   FontWeight="Bold" />
+
+            <CheckBox Content="Múzeumlátogatás" 
+                      IsChecked="True"
+                      Name="cbxMuzeum"
+                      />
+            <CheckBox Content="Paintball"
+                      IsChecked="True"
+                      Name="cbxPaintball"
+                      />
+            <CheckBox Content="Foci"
+                      Name="cbxFoci"/>
+            <CheckBox Content="Szabadulószoba"
+                      Name="cbxSzabadulo"/>
+            <CheckBox Content="Csapatjáték (ami nem foci)"
+                      Name="cbxCsapat"/>
+        </StackPanel>
+    </Grid>
+</Window>
